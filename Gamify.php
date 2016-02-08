@@ -24,9 +24,9 @@ class Gamify
     }
 
     /**
-     * @param  array
-     * @param  array
-     * @param  int
+     * @param  array of first names
+     * @param  array of last names
+     * @param  int totoal number of combinations to generate
      * @return array
      */
     public static function nameGen($first, $last, $total)
