@@ -31,17 +31,21 @@ class Gamify
      */
     public static function nameGen($first, $last, $total)
     {
-        count($first);
-        count($last);
+        $one = count($first);
+        $two = count($last);
+        if($one == $two){
+            shuffle($first);
+            shuffle($last);
 
-    	shuffle($first);
-    	shuffle($last);
+            for($i = 0; $i < $total; $i++){
 
-    	for($i = 0; $i < $total; $i++){
+            $names[] = $first[$i] . " " . $last[$i];
 
-    		$names[] = $first[$i] . " " . $last[$i];
-    	}
-    	return $names;
+            }
+        return $names;
+        }
+
+    	
     }
 }
 
