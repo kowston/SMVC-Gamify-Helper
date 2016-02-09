@@ -13,14 +13,14 @@ namespace Helpers;
  */
 class Gamify
 {
-	/**
-	 * This method will return the result of rolling a die
-	 * @param  int reperesents sides of die
-	 * @return int represents the result of the roll
-	 */
+    /**
+     * This method will return the result of rolling a die
+     * @param  int reperesents sides of die
+     * @return int represents the result of the roll
+     */
     public static function roll($sides)
     {
-    	return mt_rand(1, $sides);
+        return mt_rand(1, $sides);
     }
 
     /**
@@ -33,33 +33,40 @@ class Gamify
     {
         $one = count($first);
         $two = count($last);
-        if($one == $two){
-            shuffle($first);
-            shuffle($last);
 
-            for($i = 0; $i < $total; $i++){
+        if ($one == $two) {
+            return self::shuffleArr($first, $last, $total);
+        }
 
-            $names[] = $first[$i] . " " . $last[$i];
-
-            }
-        return $names;
-        } else if ($one > $two){
+        
+         //} else if ($one > $two){
             //work out diffrence between one and two
             //store diffrence as an int in $diff
             //based on value of $diff pull $diff number of values from first names ie 2 random values and store in an $randNames array 
             // push the values of $randNames on the end of $first
             // create a function 
-            shuffle($first);
-            shuffle($last);
+            //shuffle($first);
+            //shuffle($last);
 
-            for($i = 0; $i < $total; $i++){
+            //for($i = 0; $i < $total; $i++){
 
-            $names[] = $first[$i] . " " . $last[$i];
+            //$names[] = $first[$i] . " " . $last[$i];
 
-            }
-        } 
+            //}
+        //} 
 
-    	
+        
+    }
+
+    private static function shuffleArr($first, $last, $total)
+    {
+        shuffle($first);
+        shuffle($last);
+
+        for ($i = 0; $i < $total; $i++) {
+            $names[] = $first[$i]." ".$last[$i];
+        }
+        return $names;
     }
 }
 
