@@ -26,11 +26,14 @@ class Gamify
     /**
      * @param  array of first names
      * @param  array of last names
-     * @param  int totoal number of combinations to generate
+     * @param  int total number of combinations to generate
      * @return array
      */
     public static function nameGen($first, $last, $total)
     {
+        count($first);
+        count($last);
+
     	shuffle($first);
     	shuffle($last);
 
@@ -41,3 +44,7 @@ class Gamify
     	return $names;
     }
 }
+
+// problem is the array could have inequal ammounts of values resulting is results that have missing first or last names
+
+//
