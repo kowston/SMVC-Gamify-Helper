@@ -43,7 +43,21 @@ class Gamify
 
             }
         return $names;
-        }
+        } else if ($one > $two){
+            //work out diffrence between one and two
+            //store diffrence as an int in $diff
+            //based on value of $diff pull $diff number of values from first names ie 2 random values and store in an $randNames array 
+            // push the values of $randNames on the end of $first
+            // create a function 
+            shuffle($first);
+            shuffle($last);
+
+            for($i = 0; $i < $total; $i++){
+
+            $names[] = $first[$i] . " " . $last[$i];
+
+            }
+        } 
 
     	
     }
